@@ -75,11 +75,21 @@ const removeNote=(title) => {
     
 }
 
+const listNotes=()=>{
+    const notes=loadNotes();
+    console.log(chalk.bgBlue("Your Notes !"));
+    var n=1;
+    notes.forEach((note)=>{
+        console.log(n+'. '+note.title);
+        n++;
+    })
+}
 
 
 module.exports={
     //객체로 내보내면 여러개 내보낼 수 있음!
     getNotes:getNotes,
     addNote:addNote,
-    removeNote:removeNote
+    removeNote:removeNote,
+    listNotes:listNotes
 }
