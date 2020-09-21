@@ -1,1 +1,13 @@
-[{"title":"Things to do","body":"node.js course"},{"title":"Things to buy","body":"Wireless Charger"},{"title":"How to lose weight","body":"Eat less, move more"},{"title":"Things to do2","body":"hello"}]
+[{
+    "title":"Things to do",
+    "body":"node.js course"
+},
+    {
+        "title":"Things to buy",
+        "body":"Wireless Charger"
+        },
+        {
+            "title":"How to lose weight",
+            "body":"Eat less, move more"
+            }
+        ]

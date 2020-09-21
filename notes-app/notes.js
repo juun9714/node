@@ -1,18 +1,15 @@
 const fs=require('fs');
 const chalk=require('chalk');
 
-const getNotes=()=> {
-    return 'Your notes ...'
-}
 
+//filter 메서드 안에 제공되는 함수의 인자는 자동으로 배열의 각 요소를 가리키게 되는듯?
+//그리고 filter 메서드는 true를 반환하는 배열의 요소를 반환한다.
+//const duplicateNotes=notes.filter((note) => note.title===title)
+//find 메서드는 ()안의 함수가 한번이라도 true를 반환하면 검색을 멈추고 true를 반환한다
 const addNote=(title,body)=>{
-    //get the note saved to disk
     const notes=loadNotes();//배열
-    //filter 메서드 안에 제공되는 함수의 인자는 자동으로 배열의 각 요소를 가리키게 되는듯?
-    //그리고 filter 메서드는 true를 반환하는 배열의 요소를 반환한다.
-    //const duplicateNotes=notes.filter((note) => note.title===title)
-    //find 메서드는 ()안의 함수가 한번이라도 true를 반환하면 검색을 멈추고 true를 반환한다
     const duplicateNote=notes.find((note) => note.title === title)
+    debugger
     if(!duplicateNote){
         notes.push({
             title:title,
@@ -93,9 +90,7 @@ const listNotes= () => {
 const readNote= (title) => {
     const notes=loadNotes();
     //console.log(notes)
-    const targ=notes.find((note)=>{
-        return note.title===title
-    })
+    const targ=notes.find((note)=>note.title===title)
     //console.log(targ);
     if(targ){
         console.log(chalk.inverse.italic(targ.title));
@@ -107,7 +102,6 @@ const readNote= (title) => {
 
 module.exports={
     //객체로 내보내면 여러개 내보낼 수 있음!
-    getNotes:getNotes,
     addNote:addNote,
     removeNote:removeNote,
     listNotes:listNotes,

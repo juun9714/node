@@ -31,15 +31,17 @@ console.log(data.title); */
 */
 
 
-const content=fs.readFileSync('1-json.json');
-console.log(content);
-const strcontent=content.toString();
-console.log(strcontent);
-const myobJ=JSON.parse(strcontent);
+const contentBuffer=fs.readFileSync('1-json.json');
+console.log(contentBuffer);
+const strContent=contentBuffer.toString();
+console.log(strContent);
+const myobJ=JSON.parse(strContent);
 console.log(myobJ);
+
 myobJ.name='June';
 myobJ.planet='Ryudmila';
 myobJ.age=24;
+
 console.log(myobJ);
 const toSTR=JSON.stringify(myobJ);
 console.log(toSTR);
