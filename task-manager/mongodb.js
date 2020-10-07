@@ -38,27 +38,73 @@ MongoClient.connect(connectionURL, {    useNewUrlParser:true, useUnifiedTopology
     //client connect method의 콜백함수의 성공시 반환값
     const db = client.db(databaseName);
 
-    db.collection('tasks').find({completed:false}).toArray((error,tasks)=>{
-        if(error){
-            return console.log("fail");
-        }
-        console.log(tasks);
-    });
+    //Learn C++
 
-    db.collection('tasks').findOne({_id:new ObjectID("5f7d912b0f8cf308889a226a")},(error, task)=>{
-        if(error){
-            return console.log("fail");
-        }
-        console.log(task);
+    db.collection('tasks').deleteOne({
+        description:"Learn C++"
+    }).then((result)=>{
+        console.log(result.deletedCount)
+    }).catch((error)=>{
+        console.log(error)
     })
-});
+    
+})
 
 
 
 
+    // db.collection('users').deleteMany({
+    //     age:27}
+    //     ).then((result)=>{
+    //         console.log(result)
+    //     }).catch((error)=>{
+    //         console.log(error)
+    //     })
+   
 
 
 
+
+    // db.collection('tasks').updateMany({
+    //     completed:false
+    // },{
+    //     $set:{
+    //         completed:true
+    //     }
+    // }).then((result)=>{
+    //     console.log(result.modifiedCount)
+    // }).catch((error)=>{
+    //     console.log(error)
+    // })
+
+
+    //db.collection('users').updateOne({
+    //     _id:new ObjectID("5f7d94dc28319409c9e7d767")
+    // },{
+    //     $inc:{
+    //         age:1
+    //     }
+    // }).then((result)=>{
+    //     console.log(result)
+    // }).catch((error)=>{
+    //     console.log(error)
+    // })
+
+
+
+    // db.collection('tasks').find({completed:false}).toArray((error,tasks)=>{
+    //     if(error){
+    //         return console.log("fail");
+    //     }
+    //     console.log(tasks);
+    // });
+
+    // db.collection('tasks').findOne({_id:new ObjectID("5f7d912b0f8cf308889a226a")},(error, task)=>{
+    //     if(error){
+    //         return console.log("fail");
+    //     }
+    //     console.log(task);
+    // })
 
 
 
