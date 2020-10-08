@@ -56,13 +56,13 @@ const User=mongoose.model('User',{
     }
 })
 
-const me=new User({
-    name:'  haeri ',
-    email:'DLGOFL85@DAVICHI.com  ',
-    password:'hellowo     '
-}) 
+// const me=new User({
+//     name:'  haeri ',
+//     email:'DLGOFL85@DAVICHI.com  ',
+//     password:'hellowo     '
+// }) 
 // age에 mike와 같은 문자열을 집어넣으면 오류 뜨면서 db에 새로 데이터 생성 안된다. --> 그런데 '30' 이렇게 넣으면 또 되더라고요? ... 머쨋든 최소한의 validation possible
-//include 메서드 사용하기?
+//includs js의 자체 메서드 사용하기
 
 
 
@@ -73,32 +73,34 @@ const me=new User({
 
 
 // save returns promise
-me.save().then((me)=>{
-    console.log(me)
-}).catch((error)=>{
-    console.log('Error!',error)
-})
+// me.save().then((me)=>{
+//     console.log(me)
+// }).catch((error)=>{
+//     console.log('Error!',error)
+// })
 
 
 const Task=mongoose.model('Task',{
     Description:{
-        type:String
+        type:String,
+        required:true,
+        trim:true
     },
     Completed:{
-        type:Boolean
+        type:Boolean,
+        default:false
     }
 })
  
-// const one=new Task({
-//     Description:'Learn the Japanese',
-//     Completed:false
-// })
+const one=new Task({
+    Description:'Learn the Node js        '
+})
 
-// one.save().then((one)=>{
-//     console.log(one)
-// }).catch((error)=>{
-//     console.log('Fail',error)
-// })
+one.save().then((one)=>{
+    console.log(one)
+}).catch((error)=>{
+    console.log('Fail',error)
+})
 //save까지 해야 collection이 생성된다.
 //save returns promise
 
@@ -108,8 +110,7 @@ const Task=mongoose.model('Task',{
 
 
 
-
-
+//PET
 const Pet=mongoose.model('Pet',{
     name:{
         type:String,
