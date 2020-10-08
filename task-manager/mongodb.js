@@ -51,6 +51,16 @@ MongoClient.connect(connectionURL, {    useNewUrlParser:true, useUnifiedTopology
 })
 
 
+/*
+몽구스는 npm모듈 중 하나로 몽고디비와 완전 긴밀하게 연결된 모듈 중 하나임
+몽고디비의 CRUD와 관련되어서 더 많은 기능을 제공한다. 
+completed를 꼭 boolean으로 한다든가
+user이 다른 user가 만든 task를 읽을 수 없게 한다든가
+
+어쨌든 우리가 mongodb 모듈을 통해서 db에 자료를 저장하는 과정보다 더 쉽게 할 수 있다.
+mongoose.model 등과 같은 것을 통해서 하나의 객체, 구조체같은 것을 만드는 느낌
+그리고 그 구조체의 메서드에 save()같은 것이 있어서 바로 db에 저장할 수 있다. 
+*/
 
 
     // db.collection('users').deleteMany({
