@@ -7,8 +7,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/task-manager-api',{
     useUnifiedTopology: true 
     /*
     몽구스와 몽고디비가 같이 일할 때 인덱스를 만들어서 쉽게 접근할 수 있도록 해줌
-    mongodb 모듈은 디비 주소를 connect하고, 그 다음에 연결 성공 반환값인 client.db(databaseName)으로 디비 이름 연결해서 디비 생성해줘야 했음
-    그런데 mongoose 모듈은 주소와 디비 이름을 한번에 connect 해줄 수 있다.*/ 
+    */ 
 })
 
 /*
